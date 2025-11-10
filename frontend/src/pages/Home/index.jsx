@@ -1,10 +1,16 @@
-import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import './Home.css';
+import Categories from '../../components/Categorias'
+import Card from '../../components/Cards';
 
 export default function Page() {
     return (
         <div>
-            <h2>Página Home</h2>
-            <Link to='/about'>Home</Link>
+            <Categories/>
+            <Card/>
+            <Card/>
+            <Card/>
+            <Card/>
         </div>
     )
 }

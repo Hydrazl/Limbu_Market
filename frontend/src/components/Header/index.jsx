@@ -79,14 +79,24 @@ export default function Header() {
                             </li>
                             <li className="profileContainer">
                                 <button className='profileBtn' onClick={() => setMenuOpen(!menuOpen)}>
-                                    <img src={user.photoURL} alt={user.name} className='profileImg' />
-                                    <span>{user.name?.split(' ')[0]}</span><FaAngleDown size={16} className='arrow'/>
+                                    <img
+                                    src={user?.photoURL || '/default.png'}
+                                    alt={user?.name || 'Usuário'}
+                                    className='profileImg'
+                                    />
+                                    
+                                    <span>{user?.name?.split(' ')[0] || 'Usuário'}</span>
+                                    
+                                    <FaAngleDown size={16} className='arrow' />
                                 </button>
-                                {menuOpen && (<div className='dropdown'>
+
+                                {menuOpen && (
+                                    <div className='dropdown'>
                                     <button>Minha Conta</button>
                                     <button>Favoritos</button>
                                     <button onClick={handleLogout}>Sair</button>
-                                </div>)}
+                                    </div>
+                                )}
                             </li>
                         </>
                     ) : (
